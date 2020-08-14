@@ -1,3 +1,8 @@
+# Source
+
+https://blog.logrocket.com/user-authentication-firebase-react-apps/
+https://github.com/GoZaddy/Firebase-auth-article
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

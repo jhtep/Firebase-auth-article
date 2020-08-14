@@ -1,17 +1,18 @@
-import React, { useState, useContext } from "react";
-import { auth } from "../firebase";
-import { UserContext } from "../providers/UserProvider";
-import { Link } from "@reach/router";
+// import React, { useState, useContext } from "react";
+import React, { useState } from 'react';
+import { auth } from '../firebase';
+// import { UserContext } from "../providers/UserProvider";
+import { Link } from '@reach/router';
 
 const PasswordReset = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [emailHasBeenSent, setEmailHasBeenSent] = useState(false);
   const [error, setError] = useState(null);
 
   const onChangeHandler = event => {
     const { name, value } = event.currentTarget;
 
-    if (name === "userEmail") {
+    if (name === 'userEmail') {
       setEmail(value);
     }
   };
@@ -21,11 +22,13 @@ const PasswordReset = () => {
     auth
       .sendPasswordResetEmail(email)
       .then(() => {
-          setEmailHasBeenSent(true);
-        setTimeout(() => {setEmailHasBeenSent(false)}, 3000);
+        setEmailHasBeenSent(true);
+        setTimeout(() => {
+          setEmailHasBeenSent(false);
+        }, 3000);
       })
       .catch(() => {
-        setError("Error resetting password");
+        setError('Error resetting password');
       });
   };
   return (
